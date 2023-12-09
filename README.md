@@ -1,7 +1,15 @@
 # IQ와 환경적 요인의 상관관계
 ##### 빅데이터 프로젝트 202144102 최민주
 
-## 1. 데이터 전처리
+## 1. 데이터 시트 (일부분 첨부)
+1. avgIQpercountry.csv
+   ![image](https://github.com/lllllIIlI/study/assets/93465102/97a88f0f-6567-4d1c-8d7e-466a07af2a66)
+2. IQ_level.csv
+   ![image](https://github.com/lllllIIlI/study/assets/93465102/2bac0545-1963-451b-83af-27838aa241f5)
+3. quality_of_life.csv
+   ![image](https://github.com/lllllIIlI/study/assets/93465102/32f2aa94-2e8c-4e0a-8659-ed161ef03d17)
+
+## 2. 데이터 전처리
 ```
 import pandas as pd
 import numpy as np
