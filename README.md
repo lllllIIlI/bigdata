@@ -75,3 +75,10 @@ plt.show()
 ```
 df5.drop(['avg_temp'], axis=1, inplace=True)
 ```
+
+## 4. IQ와 Literacy Rate 관계 분석
+```
+fig = px.scatter(df5, x='IQ', y='Literacy Rate', size='Population')
+fig.update_layout(width=800)
+```
+![newplot](https://github.com/lllllIIlI/study/assets/93465102/4fa5772e-b4a3-4ba4-afbb-a8c918c1632a)
