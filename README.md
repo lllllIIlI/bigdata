@@ -76,16 +76,7 @@ heatmap_result.pop(0)
 heatmap_result[8] = abs(heatmap_result[8]) // 음수인 avg_temp만 절댓값으로 변환
 print(heatmap_result)
 ```
-
-## 4. IQ와 Literacy Rate 관계 분석
-```
-fig = px.scatter(df5, x='IQ', y='Literacy Rate', size='Population')
-fig.update_layout(width=800)
-```
-![newplot](https://github.com/lllllIIlI/study/assets/93465102/4fa5772e-b4a3-4ba4-afbb-a8c918c1632a) <br> 
--> 문해력이 높아질수록 IQ가 상승
-
-## 5. HDI, Mean years of schooling, Literacy Rate 연관성
+## 4. HDI, Mean years of schooling, Literacy Rate 연관성
 HDI(인간개발지수 - 선진화 정도) <br>
 Mean years of schooling (평균 교육 기간) <br>
 Literacy Rate (문해력) <br>
@@ -99,7 +90,55 @@ sns.lineplot(data=df5, x ='IQ', y='HDI', ax=ax1)
 sns.lineplot(data=df5, x = 'IQ', y='Mean years of schooling', ax=ax2)
 sns.lineplot(data = df5, x = 'IQ', y = 'Literacy Rate', ax = ax3)
 ```
-![다운로드](https://github.com/lllllIIlI/study/assets/93465102/f4c8abaa-4f2f-44e1-8dee-c6d196ba31af)
-<br>
+![다운로드](https://github.com/lllllIIlI/study/assets/93465102/f4c8abaa-4f2f-44e1-8dee-c6d196ba31af) <br>
 -> HDI와 Mean years of schooling 그래프는 유사하지만, Literacy Rate는 조금씩 다름 <br>
 -> 유사한 HDI와 Mean years of schooling을 하나로 묶기로 결정
+
+## 5. education expenditure, avg_income, GNI
+education expenditure (평균 교육 지출 비용($))) <br>
+avg_income (평균 소득($)) <br>
+GNI (국민총소득 - 국가의 경제적 활동 수준, 국민 소득 수준) <br>
+```
+fig = plt.figure(figsize=(40,10))
+ax1 = fig.add_subplot(1,3,1)
+ax2 = fig.add_subplot(1,3,2)
+ax3 = fig.add_subplot(1,3,3)
+
+sns.lineplot(data=df5, x ='IQ', y='education expenditure', ax=ax1)
+sns.lineplot(data=df5, x = 'IQ', y='avg_income', ax=ax2)
+sns.lineplot(data=df5, x ='IQ', y='GNI', ax=ax3)
+```
+![다운로드2](https://github.com/lllllIIlI/study/assets/93465102/ec5edf9b-861b-4656-bea2-3a917adc8f11) <br>
+-> education expenditure, avg_income, GNI 세 그래프가 유사하여 하나로 묶기로 결정
+
+## 6. 파이차트
+* 위에서 하나로 합치기로 한 것들과 하위 세 항목은 기타로 묶음
+```
+plt.figure(figsize=(8, 8))
+labels = df5.columns.tolist()
+labels.pop(0)
+labels.pop(0)
+result_dict = dict(zip(labels, heatmap_result))
+result_dict = dict(sorted(result_dict.items(), key=lambda x: x[1], reverse=True))
+
+HDI = sum(value for key, value in result_dict.items() if key in list(['HDI','Mean years of schooling']))
+del result_dict['Mean years of schooling']
+result_dict['HDI'] = HDI
+
+GNI = sum(value for key, value in result_dict.items() if key in list(['education expenditure','avg_income', 'GNI']))
+del result_dict['education expenditure']
+del result_dict['avg_income']
+result_dict['GNI'] = GNI
+
+result_dict = dict(sorted(result_dict.items(), key=lambda x: x[1], reverse=True))
+
+threshold = -3
+etc = sum(value for key, value in result_dict.items() if key in list(result_dict.keys())[threshold:])
+keys_to_delete = list(result_dict.keys())[threshold:]
+for key in keys_to_delete:
+    del result_dict[key]
+result_dict['etc'] = etc
+#print(labels)
+```
+* 파이차트
+![파이차트](https://github.com/lllllIIlI/study/assets/93465102/1328688d-7188-443e-aedb-638007906303)
