@@ -66,10 +66,9 @@ plt.show()
 ![히트맵](https://github.com/lllllIIlI/study/assets/93465102/0c1dad43-798e-4b14-9663-bf53bb887107)
 
 <br>
- -> IQ와 상관관계가 높은 열 <br>
+-> IQ와 상관관계가 높은 열 <br>
          = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health, avg_temp -> 분석 예정 <br>
 -> Novel Prices은 환경적 요인들과 관련 ↓ <br>
-```
 
 ## 4. IQ와 Literacy Rate 관계 분석
 ```
@@ -77,3 +76,4 @@ fig = px.scatter(df5, x='IQ', y='Literacy Rate', size='Population')
 fig.update_layout(width=800)
 ```
 ![newplot](https://github.com/lllllIIlI/study/assets/93465102/4fa5772e-b4a3-4ba4-afbb-a8c918c1632a)
+-> 문해력이 높아질수록 IQ가 상승
