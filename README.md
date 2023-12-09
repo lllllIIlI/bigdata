@@ -56,6 +56,7 @@ df5['health'].interpolate(method='values', inplace=True)
 df5['safety'].interpolate(method='values', inplace=True)
 print(df5)
 ```
+![image](https://github.com/lllllIIlI/study/assets/93465102/423218f7-375b-4a65-bfe8-0a3da4ea9ceb)
 
 ## 3. 히트맵
 ```
