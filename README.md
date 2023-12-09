@@ -23,6 +23,7 @@ df5.rename(columns = {'HDI (2021)' : 'HDI', 'Average IQ' : 'IQ',
 df5.set_index('Rank', inplace=True)
 
 print(df5.isnull().sum()) // 결측치 확인
+// interpolate - 결측치 보간(선형 보간)
 df5['HDI'].interpolate(method='values', inplace=True)
 df5['Mean years of schooling'].interpolate(method='values', inplace=True)
 df5['GNI'].interpolate(method='values', inplace=True)
@@ -33,5 +34,4 @@ df5['stability'].interpolate(method='values', inplace=True)
 df5['rights'].interpolate(method='values', inplace=True)
 df5['health'].interpolate(method='values', inplace=True)
 df5['safety'].interpolate(method='values', inplace=True)
-# print(df5)
-# print(df5.isnull().sum())
+print(df5)
