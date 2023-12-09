@@ -2,6 +2,7 @@
 ##### 빅데이터 프로젝트 202144102 최민주
 
 ## 1. 데이터 전처리
+```
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -35,3 +36,4 @@ df5['rights'].interpolate(method='values', inplace=True)
 df5['health'].interpolate(method='values', inplace=True)
 df5['safety'].interpolate(method='values', inplace=True)
 print(df5)
+```
