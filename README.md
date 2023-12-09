@@ -7,7 +7,7 @@
 3. quality_of_life.csv
 
 ## 2. 데이터 전처리
-사용하는 라이브러리
+* 사용하는 라이브러리
 ```
 import pandas as pd
 import numpy as np
@@ -15,13 +15,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 ```
-3개의 데이터시트 read
+* 3개의 데이터시트 read
 ```
 df1 = pd.read_csv('avgIQpercountry.csv')
 df2 = pd.read_csv('IQ_level.csv')
 df3 = pd.read_csv('quality_of_life.csv')
 ```
-데이터시트 국가명으로 병합, 사용하지 않는 열 제거
+* 데이터시트 국가명으로 병합, 사용하지 않는 열 제거
 ```
 df2.drop(['IQ'], axis=1, inplace=True)
 df4 = pd.merge(df1, df2, how='left', left_on='Country', right_on='country')
@@ -29,18 +29,18 @@ df5 = pd.merge(df4, df3, how='left', on='country')
 df5.drop(['popularity', 'Continent', 'country', 'climate', 'costs', 'rank'],
          axis=1, inplace=True)
 ```
-열 이름 재정의
+* 열 이름 재정의
 ```
 df5.rename(columns = {'HDI (2021)' : 'HDI', 'Average IQ' : 'IQ',
                       'Mean years of schooling - 2021' : 'Mean years of schooling',
                       ' GNI - 2021' : 'GNI', 'Population - 2023' : 'Population',
                       'education_expenditure' : 'education expenditure'}, inplace = True)
 ```
-순위 열을 인덱스로 지정
+* 순위 열을 인덱스로 지정
 ```
 df5.set_index('Rank', inplace=True)
 ```
-선형 보간법으로 결측치 보간
+* 선형 보간법으로 결측치 보간
 ```
 print(df5.isnull().sum()) // 결측치 확인
 // interpolate - 결측치 보간(선형 보간)
@@ -65,13 +65,13 @@ plt.show()
 ```
 ![히트맵](https://github.com/lllllIIlI/study/assets/93465102/0c1dad43-798e-4b14-9663-bf53bb887107)
 
-* -> IQ와 상관관계가 0.6 이상인 열
+ -> IQ와 상관관계가 0.6 이상인 열
          = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health
          -> 분석 예정
-* -> Novel Prices은 환경적 요인들과 관련 ↓
-* -> avg_temp는 어떤 열과도 무관
+-> Novel Prices은 환경적 요인들과 관련 ↓
+-> avg_temp는 어떤 열과도 무관
 
-상관관계가 낮은 열 제거 (평균 기온- avg_temp)
+* 상관관계가 낮은 열 제거 (평균 기온- avg_temp)
 ```
 df5.drop(['avg_temp'], axis=1, inplace=True)
 ```
