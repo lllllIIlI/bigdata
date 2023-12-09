@@ -66,14 +66,9 @@ plt.show()
 ![히트맵](https://github.com/lllllIIlI/study/assets/93465102/0c1dad43-798e-4b14-9663-bf53bb887107)
 
 <br>
- -> IQ와 상관관계가 0.6 이상인 열 <br>
-         = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health -> 분석 예정 <br>
+ -> IQ와 상관관계가 높은 열 <br>
+         = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health, avg_temp -> 분석 예정 <br>
 -> Novel Prices은 환경적 요인들과 관련 ↓ <br>
--> avg_temp는 어떤 열과도 무관 -> 제거 <br><br>
-
-* 상관관계가 낮은 열 제거 (평균 기온- avg_temp)
-```
-df5.drop(['avg_temp'], axis=1, inplace=True)
 ```
 
 ## 4. IQ와 Literacy Rate 관계 분석
