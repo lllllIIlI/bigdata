@@ -99,6 +99,7 @@ sns.lineplot(data=df5, x ='IQ', y='HDI', ax=ax1)
 sns.lineplot(data=df5, x = 'IQ', y='Mean years of schooling', ax=ax2)
 sns.lineplot(data = df5, x = 'IQ', y = 'Literacy Rate', ax = ax3)
 ```
-![HDI,mean years of schooling](https://github.com/lllllIIlI/study/assets/93465102/453af5a2-8710-49dd-8534-227f4b6be29a) <br>
+![다운로드](https://github.com/lllllIIlI/study/assets/93465102/f4c8abaa-4f2f-44e1-8dee-c6d196ba31af)
+<br>
 -> HDI와 Mean years of schooling 그래프는 유사하지만, Literacy Rate는 조금씩 다름 <br>
 -> 유사한 HDI와 Mean years of schooling을 하나로 묶기로 결정
