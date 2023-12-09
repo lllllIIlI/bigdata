@@ -125,12 +125,14 @@ result_dict = dict(sorted(result_dict.items(), key=lambda x: x[1], reverse=True)
 HDI = sum(value for key, value in result_dict.items() if key in list(['HDI','Mean years of schooling']))
 del result_dict['Mean years of schooling']
 result_dict['HDI'] = HDI
+
 // GNI, education expenditure, avg_income
 GNI = sum(value for key, value in result_dict.items() if key in list(['education expenditure','avg_income', 'GNI']))
 del result_dict['education expenditure']
 del result_dict['avg_income']
 result_dict['GNI'] = GNI
 
+// 기타 (하위 3가지)
 result_dict = dict(sorted(result_dict.items(), key=lambda x: x[1], reverse=True))
 
 threshold = -3
@@ -139,7 +141,8 @@ keys_to_delete = list(result_dict.keys())[threshold:]
 for key in keys_to_delete:
     del result_dict[key]
 result_dict['etc'] = etc
-#print(labels)
+# print(labels)
+# print(result_dict)
 ```
 * 파이차트
 ![파이차트](https://github.com/lllllIIlI/study/assets/93465102/1328688d-7188-443e-aedb-638007906303)
