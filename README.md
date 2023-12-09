@@ -66,6 +66,8 @@ plt.show()
 -> IQ와 상관관계가 0.6 이상인 열
          = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health
 
+
+
 상관관계가 낮은 열 제거 (평균 기온)
 ```
 df5.drop(['avg_temp'], axis=1, inplace=True)
