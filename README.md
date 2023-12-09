@@ -63,10 +63,9 @@ plt.figure(figsize=(10,10))
 sns.heatmap(df5.corr(), linewidths=0.1, cmap='coolwarm', linecolor='white', annot=True)
 plt.show()
 ```
--> IQ와 상관관계가 0.6 이상인 열
-         = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health
-
-
+![히트맵](https://github.com/lllllIIlI/study/assets/93465102/0c1dad43-798e-4b14-9663-bf53bb887107)
+-> IQ와 상관관계가 0.6 이상인 열 = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health -> 분석 예정
+-> Novel Prices은 환경적 요인들과 관련X
 
 상관관계가 낮은 열 제거 (평균 기온)
 ```
