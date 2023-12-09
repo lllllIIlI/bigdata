@@ -67,8 +67,7 @@ plt.show()
 
 <br>
  -> IQ와 상관관계가 0.6 이상인 열 <br>
-         = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health <br>
-         -> 분석 예정 <br>
+         = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health -> 분석 예정 <br>
 -> Novel Prices은 환경적 요인들과 관련 ↓ <br>
 -> avg_temp는 어떤 열과도 무관 <br>
 
