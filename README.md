@@ -121,10 +121,11 @@ labels.pop(0)
 result_dict = dict(zip(labels, heatmap_result))
 result_dict = dict(sorted(result_dict.items(), key=lambda x: x[1], reverse=True))
 
+// HDI, Mean years of schooling
 HDI = sum(value for key, value in result_dict.items() if key in list(['HDI','Mean years of schooling']))
 del result_dict['Mean years of schooling']
 result_dict['HDI'] = HDI
-
+// GNI, education expenditure, avg_income
 GNI = sum(value for key, value in result_dict.items() if key in list(['education expenditure','avg_income', 'GNI']))
 del result_dict['education expenditure']
 del result_dict['avg_income']
