@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 ```
-* 3개의 데이터시트 read
+* 3개의 데이터 시트 read
 ```
 df1 = pd.read_csv('avgIQpercountry.csv')
 df2 = pd.read_csv('IQ_level.csv')
@@ -70,6 +70,14 @@ plt.show()
 -> IQ와 상관관계가 높은 열 <br>
          = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health, avg_temp -> 분석 예정 <br>
 -> Novel Prices은 환경적 요인들과 관련 ↓ <br>
+
+* IQ와 다른 요인들간의 상관관계 지수를 데이터시트에 추가
+```
+heatmap_result = df5.corr()['IQ'].tolist()
+heatmap_result.pop(0)
+heatmap_result[8] = abs(heatmap_result[8]) // 음수인 avg_temp만 절댓값으로 변환
+print(heatmap_result)
+```
 
 ## 4. IQ와 Literacy Rate 관계 분석
 ```
