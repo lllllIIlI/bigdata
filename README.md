@@ -66,8 +66,8 @@ plt.show()
 ```
 ![히트맵](https://github.com/lllllIIlI/study/assets/93465102/0c1dad43-798e-4b14-9663-bf53bb887107) <br>
 -> IQ와 상관관계가 높은 열 <br>
-         = Literacy Rate, HDI, Mean year of schooling, GNI,avg_income, rights, health, avg_temp -> 분석 예정 <br>
--> Novel Prices은 환경적 요인들과 관련 ↓ <br>
+         = Literacy Rate, HDI, Mean year of schooling, GNI, avg_income, rights, health, avg_temp <br>
+-> Novel Prices은 IQ, 환경적 요인들과 관련 ↓ <br>
 
 * IQ와 다른 요인들간의 상관관계 지수를 데이터시트에 추가
 ```
