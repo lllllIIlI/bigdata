@@ -1,10 +1,11 @@
 # IQ와 환경적 요인의 상관관계
----
 
 ## 1. 데이터 시트
 1. avgIQpercountry.csv
 2. IQ_level.csv
 3. quality_of_life.csv
+
+---
 
 ## 2. 데이터 전처리
 * 사용하는 라이브러리
@@ -58,6 +59,8 @@ print(df5)
 ```
 ![image](https://github.com/lllllIIlI/study/assets/93465102/423218f7-375b-4a65-bfe8-0a3da4ea9ceb)
 
+---
+
 ## 3. 히트맵
 ```
 plt.figure(figsize=(10,10))
@@ -76,6 +79,9 @@ heatmap_result.pop(0)
 heatmap_result[8] = abs(heatmap_result[8]) // 음수인 avg_temp만 절댓값으로 변환
 print(heatmap_result)
 ```
+
+---
+
 ## 4. HDI, Mean years of schooling, Literacy Rate 연관성
 HDI(인간개발지수 - 선진화 정도) <br>
 Mean years of schooling (평균 교육 기간) <br>
@@ -94,6 +100,8 @@ sns.lineplot(data = df5, x = 'IQ', y = 'Literacy Rate', ax = ax3)
 -> HDI와 Mean years of schooling 그래프는 유사하지만, Literacy Rate는 조금씩 다름 <br>
 -> 유사한 HDI와 Mean years of schooling을 하나로 묶기로 결정
 
+---
+
 ## 5. education expenditure, avg_income, GNI
 education expenditure (평균 교육 지출 비용($))) <br>
 avg_income (평균 소득($)) <br>
@@ -110,6 +118,8 @@ sns.lineplot(data=df5, x ='IQ', y='GNI', ax=ax3)
 ```
 ![다운로드2](https://github.com/lllllIIlI/study/assets/93465102/ec5edf9b-861b-4656-bea2-3a917adc8f11) <br>
 -> education expenditure, avg_income, GNI 세 그래프가 유사하여 하나로 묶기로 결정
+
+---
 
 ## 6. 파이차트
 * 위에서 하나로 합치기로 한 것들과 하위 세 항목은 기타로 묶음
