@@ -1,4 +1,5 @@
 # IQ와 환경적 요인의 상관관계
+---
 
 ## 1. 데이터 시트
 1. avgIQpercountry.csv
